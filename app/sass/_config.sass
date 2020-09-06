@@ -1,10 +1,10 @@
 // USER VARIABLES SECTION
 
-$accent: #78B77E // Accent Color
-$fontsize: 16px // Body Font Size
-$textcolor: #143026 // Text Color
+$accent: #0090ff // Accent Color
+$fontsize: 14px // Body Font Size
+$textcolor: #ffffff // Text Color
 $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
-$raleway: 'Raleway', -apple-system, BlinkMacSystemFont, Arial, sans-serif // Montserrat Font Family
+$opensans: 'OpenSans', -apple-system, BlinkMacSystemFont, Arial, sans-serif // Montserrat Font Family
 
 $color-brand: #3023ae
 $color-brand-secondary: #c86dd7
@@ -27,13 +27,11 @@ $color-brand-secondary: #c86dd7
         font-family: $fname
         font-style: $fstyle
         font-weight: $fweight
-        font-display: swap // Uncomment to initially display system fonts
+        font-display: swap
         src: local($fname), url($furl) format('woff2')
 
-@include font('Raleway', normal, 400, '../fonts/ralewayregular.woff2')
-@include font('Raleway', normal, 500, '../fonts/ralewaymedium.woff2')
-@include font('Raleway', normal, 600, '../fonts/ralewaysemibold.woff2')
-@include font('Raleway', normal, 700, '../fonts/ralewaybold.woff2')
+@include font('OpenSans', normal, 400, '../fonts/OpenSans/OpenSans-Regular.woff2')
+// @include font('OpenSans', normal, 700, '../fonts/OpenSans/OpenSans-Bold.woff2')
 
 // GENERAL DOCUMENT STYLES
 
@@ -51,8 +49,11 @@ input, textarea
     &:required:valid
         border-color: green
 
+*
+    box-sizing: border-box
+
 body
-    font-family: $raleway
+    font-family: $opensans
     font-size: $fontsize
     min-width: 300px
     position: relative
@@ -60,6 +61,7 @@ body
     overflow-x: hidden
     color: $textcolor
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    margin: 0
 
 a
     text-decoration: none

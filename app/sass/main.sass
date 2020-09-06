@@ -1,4 +1,255 @@
 @import config
+
 body
-	// display: none
-    display: grid
+    background-image: url('../images/src/body-bg.jpg')
+    background-repeat: no-repeat
+    background-size: cover
+    background-color: #000
+    background-position: center 0
+
+.preview-site
+    min-height: 100vh
+    position: relative
+
+    &::before
+        content: ''
+        background-image: url('../images/body-logo-center.png')
+        position: absolute
+        width: 100%
+        height: 100%
+        background-position: center 300px
+        z-index: -1
+        background-repeat: no-repeat
+        background-blend-mode: color
+
+.container
+    max-width: 1170px
+    width: 100%
+    margin: 0 auto
+
+    @media screen and ( max-width: 1200px )
+        max-width: 960px
+
+    @media screen and ( max-width: 992px )
+        max-width: 720px
+
+.hover-accent
+    transition: all 0.2s
+
+    &:hover
+        color: $accent
+
+.t-header
+    border-bottom: 1px solid $accent
+    display: flex
+    justify-content: space-between
+    text-transform: uppercase
+    align-items: center
+    padding: 16px 0
+    margin-bottom: 22px
+    font-weight: bold
+
+    &__logo-wrap
+        display: flex
+
+    &__info-server
+        display: flex
+
+    &__status-text
+        color: $accent
+
+    &__online-text
+        color: $accent
+
+    &__info-fraction
+        display: flex
+
+    &__info-item
+        margin-right: 36px
+        height: fit-content
+
+        &:last-child
+            margin-right: 0
+
+    &__blue-text
+        color: #1ebfef
+        font-weight: bold
+
+    &__red-text
+        font-weight: bold
+        color: #ee7d53
+
+    &__langs-list
+        display: flex
+
+    &__langs-item
+        margin-right: 20px
+
+        .active
+            color: $accent
+
+        &:last-child
+            margin-right: 0
+
+.b-header
+    display: flex
+    justify-content: space-between
+
+    &__socials-list
+        display: flex
+
+    &__socials-item
+        margin-right: 10px
+
+        &:last-child
+            margin-right: 0
+
+    &__socials-link
+        border: 2px solid #ffffff
+        width: 31px
+        height: 31px
+        display: block
+        padding: 0 6px
+        transition: all 0.2s
+
+        svg
+            height: 100%
+            width: 100%
+            transition: all 0.2s
+
+        &:hover
+            border: 2px solid $accent
+
+            svg
+                fill: $accent
+
+    &__links
+        display: flex
+
+    &__link
+        margin-right: 24px
+        font-weight: bold
+        text-transform: uppercase
+        height: fit-content
+
+        &:last-child
+            margin-right: 0
+
+main
+    height: 800px
+
+.footer
+    margin-right: auto
+    background: linear-gradient(0deg, rgba(0,0,0,1) 40%, rgba(0,212,255,0) 100%)
+    padding-top: 200px
+
+.t-footer
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15)
+    padding: 16px 0
+    font-weight: bold
+    text-transform: uppercase
+
+    .container
+        justify-content: space-between
+        display: flex
+
+    &__links
+        display: flex
+        width: fit-content
+
+    &__link
+        margin-right: 36px
+
+        &:last-child
+            margin-right: 0
+
+.b-footer
+    padding: 20px 0
+
+    &__text
+        text-align: center
+        color: #727373
+        font-size: 12px
+
+@media screen and ( min-width: 1920px )
+    body
+        background-size: auto
+
+@media screen and ( max-width: 1920px )
+    body
+        background-size: cover
+
+    .preview-site
+        &::before
+            background-size: 700px
+
+@media screen and ( max-width: 1600px )
+    .preview-site
+        &::before
+            background-size: 600px
+            background-position: center 250px
+
+    main
+        height: 530px
+
+@media screen and ( max-width: 1200px )
+    body
+        font-size: 12px
+
+    .t-header
+        &__info-item
+            margin-right: 16px
+
+        &__langs-item
+            margin-right: 16px
+
+    .t-footer
+        &__link
+            margin-right: 16px
+
+.reg-modal
+    border: 1px solid $accent
+    padding: 60px 50px 40px
+    background-color: #000000
+    max-width: 500px
+    display: none
+
+    &__title
+        font-size: 36px
+        font-weight: bold
+        margin-bottom: 40px
+        text-align: center
+        text-transform: uppercase
+
+    &__form
+        display: flex
+        flex-direction: column
+
+    &__ttu
+        text-transform: uppercase
+
+.label-modal
+    text-transform: uppercase
+    margin-left: 10px
+    margin-bottom: 10px
+
+.input-modal
+    border: 1px solid $accent
+    padding: 20px 10px
+    width: 100%
+    background-color: #000000
+    margin-bottom: 20px
+    color: #ffffff
+
+.button-modal
+    background-color: $accent
+    padding: 20px 10px
+    width: 100%
+    text-transform: uppercase
+    border: 1px solid $accent
+    transition: 0.2s
+    cursor: pointer
+    color: #ffffff
+
+    &:hover
+        background-color: transparent

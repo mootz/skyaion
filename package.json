@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "browser-sync": "^2.26.12",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
@@ -20,6 +21,8 @@
     "gulp-newer": "^1.4.0",
     "gulp-sass": "^4.1.0",
     "gulp-uglify-es": "^2.0.0",
-    "jquery": "^3.5.1"
-  }
+    "jquery": "^3.5.1",
+    "normalize.css": "^8.0.1"
+  },
+  "dependencies": {}
 }

@@ -1,3 +1,5 @@
 $(document).ready(function() {
-	// $('body').hide()
+	$('[data-fancybox="modal"]').fancybox({
+        // Options will go here
+    });
 })
