@@ -6,16 +6,14 @@
     <meta charset="UTF-8">
     <title>SkyAion - мастер сервер Aion 2.5 небесного качества</title>
 
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="css/libs.min.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.min.css">
-
-
+    <link rel="stylesheet" href="../css/libs.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../libs/fancybox/jquery.fancybox.min.css">
 
 </head>
 
@@ -28,14 +26,14 @@
             <div class="t-header">
 
                 <div class="t-header__logo-wrap">
-                    <img src="images/header-logo.png" alt="Логотип" class="t-header__logo-img">
+                    <img src="../images/header-logo.png" alt="Logo" class="t-header__logo-img">
                 </div>
 
                 <div class="t-header__info-server">
-                    <p class="t-header__info-status t-header__info-item">Статус сервера: <span
+                    <p class="t-header__info-status t-header__info-item">Server status: <span
                             class="t-header__status-text">ONLINE</span>
                     </p>
-                    <p class="t-header__info-online t-header__info-item">Игроков в сети: <span
+                    <p class="t-header__info-online t-header__info-item">Online players: <span
                             class="t-header__online-text">1920</span></p>
 
                     <div class="t-header__info-fraction">
@@ -50,12 +48,12 @@
                 <div class="t-header__langs">
                     <ul class="t-header__langs-list">
 
-                        <li style="display: none;" class="t-header__langs-item">
-                            <a href="/skyaion/" class="t-header__langs-link hover-accent active">RU</a>
+                        <li class="t-header__langs-item">
+                            <a href="/skyaion/" class="t-header__langs-link hover-accent">RU</a>
                         </li>
 
-                        <li class="t-header__langs-item">
-                            <a href="/skyaion/en" class="t-header__langs-link hover-accent">EN</a>
+                        <li style="display: none;" class="t-header__langs-item">
+                            <a href="/skyaion/en" class="t-header__langs-link hover-accent active">EN</a>
                         </li>
 
                         <li class="t-header__langs-item">
@@ -172,10 +170,10 @@
                 </div>
 
                 <div class="b-header__links">
-                    <a href="#complete-modal" data-fancybox class="b-header__link hover-accent">Форум</a>
-                    <a href="#d-modal" data-fancybox class="b-header__link hover-accent">Скачать файлы</a>
-                    <a href="#reg-modal" data-fancybox class="b-header__link hover-accent">Регистрация</a>
-                    <a href="#auth-modal" data-fancybox class="b-header__link hover-accent">личный кабинет</a>
+                    <a href="#complete-modal" data-fancybox class="b-header__link hover-accent">Forum</a>
+                    <a href="#d-modal" data-fancybox class="b-header__link hover-accent">Download file</a>
+                    <a href="#reg-modal" data-fancybox class="b-header__link hover-accent">Registration</a>
+                    <a href="#auth-modal" data-fancybox class="b-header__link hover-accent">My account</a>
                 </div>
 
             </div>
@@ -190,14 +188,14 @@
             <div class="container">
 
                 <div class="t-footer__links">
-                    <a href="#succ-pass" data-fancybox class="t-footer__link hover-accent">информация о проекте</a>
-                    <a href="#" class="t-footer__link hover-accent">правила</a>
-                    <a href="#" class="t-footer__link hover-accent">поддержка сервера</a>
+                    <a href="#succ-pass" data-fancybox class="t-footer__link hover-accent">Project information</a>
+                    <a href="#" class="t-footer__link hover-accent">Rules</a>
+                    <a href="#" class="t-footer__link hover-accent">Support</a>
                     <a href="#" class="t-footer__link hover-accent">TOPG</a>
                     <a href="#" class="t-footer__link hover-accent">mmotop</a>
                 </div>
 
-                <a href="#" class="t-footer__solutions hover-accent">Решение возможных проблем с клиентом</a>
+                <a href="#" class="t-footer__solutions hover-accent">SOLVING PROBLEMS WITH THE CLIENT</a>
 
             </div>
         </div>
@@ -206,37 +204,37 @@
             <div class="container">
 
                 <p class="b-footer__text">
-                    SkyAion не является официальным сервером игры Aion и предоставляется лишь в ознакомительных
-                    целях. <br>Все товарные знаки являются собственностью компании NCSOFT.
+                    SkyAion is not an official Aion game server and is provided for informational purposes only.
+                    <br> All trademarks are the property of NCSOFT.
                     <br><br>
-                    © 2020 SkyAion.net - мастер сервер Aion 2.5
+                    © 2020 SkyAion.net - master server Aion 2.5
                 </p>
 
             </div>
         </div>
     </footer>
 
-    <div class="reg-modal registration-modal" id="reg-modal">
+    <div class="reg-modal" id="reg-modal">
         <div class="reg-modal__container-first">
-            <h2 class="reg-modal__title">Регистрация</h2>
+            <h2 class="reg-modal__title">Registration</h2>
 
             <form class="reg-modal__form">
 
-                <label for="reg-login" class="reg-modal__label label-modal">Логин</label>
+                <label for="reg-login" class="reg-modal__label label-modal">Login</label>
                 <input type="text" name="reg-login" id="reg-login" class="reg-modal__input input-modal reg-modal__ttu">
 
-                <label for="reg-pass" class="reg-modal__label label-modal">Пароль</label>
+                <label for="reg-pass" class="reg-modal__label label-modal">Password</label>
                 <input type="password" name="reg-pass" id="reg-pass" class="reg-modal__input input-modal">
 
-                <label for="reg-repass" class="reg-modal__label label-modal">Повторите пароль</label>
+                <label for="reg-repass" class="reg-modal__label label-modal">Repeat your password</label>
                 <input type="password" name="reg-repass" id="reg-repass" class="reg-modal__input input-modal">
 
-                <label for="reg-mail" class="reg-modal__label label-modal">Почта</label>
+                <label for="reg-mail" class="reg-modal__label label-modal">mail</label>
                 <input type="text" name="reg-mail" id="reg-mail" class="reg-modal__input input-modal reg-modal__ttu">
 
-                <button type="submit" class="button button-modal button-modal--reverse">Зарегистрироваться</button>
+                <button type="submit" class="button button-modal button-modal--reverse">register</button>
 
-                <p class="reg-modal__error accent">Почта уже используется</p>
+                <p class="reg-modal__error accent">Mail is already in use</p>
 
             </form>
         </div>
@@ -259,16 +257,17 @@
             </div>
 
             <p class="reg-modal__complete-para">
-                Необходимо подтвердить адрес электронной почты!
+                You must confirm your email address!
             </p>
 
             <p class="reg-modal__complete-para">
-                Письмо с инструкцией отправлено на Ваш email: <span
-                    class="reg-modal__complete-mail">vjmikhailov15@mail.ru</span>. Проверьте входящие сообщения.
+                An email with instructions has been sent to Your email address: <span
+                    class="reg-modal__complete-mail">vjmikhailov15@mail.ru</span>.
             </p>
 
             <p class="reg-modal__complete-para">
-                Если письмо не удается найти, проверьте папку <span class="reg-modal__complete-spam">СПАМ</span>.
+                Check your incoming messages. If the email can't be found, check the<span
+                    class="reg-modal__complete-spam"> SPAM</span> folder.
             </p>
         </div>
     </div>
@@ -295,9 +294,8 @@
 
 
             <p class="reg-modal__complete-para">
-                Поздравляем
-                <br>Ваш аккаунт успешно зарегистрирован
-                Теперь вы можете войти в свой личный кабинет
+                Hooray!
+                <br>Your account has been successfully registered you can now log in to your personal account
             </p>
 
 
@@ -306,11 +304,12 @@
 
     <div class="d-modal" id="d-modal">
         <h2 class="d-modal__title">
-            <span class="d-modal__accent accent">Скачать</span> файлы
+            <span class="d-modal__accent accent">Download</span> file
         </h2>
 
         <p class="d-modal__desc">
-            Здесь Вы можете скачать <span class="accent">ЛАУНЧЕР сервера</span>, КЛИЕНТ и файлы для языковой настройки
+            Here you can download the server <span class="accent">launcher</span>, client, and language configuration
+            files
         </p>
 
         <ul class="d-modal__list">
@@ -333,8 +332,8 @@
             </li>
 
             <li class="d-modal__item">
-                <a href="#" class="d-modal__link button button-modal button-modal--reverse">Инструкция по установке
-                    клиента</a>
+                <a href="#" class="d-modal__link button button-modal button-modal--reverse">Installation instructions
+                    client</a>
             </li>
 
             <li class="d-modal__item">
@@ -354,8 +353,8 @@
             </li>
 
             <li class="d-modal__item">
-                <a href="#" class="d-modal__link button button-modal button-modal--reverse">Инструкция по установке
-                    языка</a>
+                <a href="#" class="d-modal__link button button-modal button-modal--reverse">Installation instructions
+                    language</a>
             </li>
 
         </ul>
@@ -364,40 +363,39 @@
 
     <div class="reg-modal auth-modal" id="auth-modal">
         <div class="reg-modal__container-first">
-            <h2 class="reg-modal__title">личный кабинет</h2>
+            <h2 class="reg-modal__title">my account</h2>
 
             <form class="reg-modal__form">
 
-                <label for="auth-login" class="reg-modal__label label-modal">Логин</label>
+                <label for="auth-login" class="reg-modal__label label-modal">Login</label>
                 <input type="text" name="auth-login" id="auth-login"
                     class="reg-modal__input input-modal reg-modal__ttu">
 
-                <label for="auth-pass" class="reg-modal__label label-modal">Пароль</label>
+                <label for="auth-pass" class="reg-modal__label label-modal">Password</label>
                 <input type="password" name="auth-pass" id="auth-pass" class="reg-modal__input input-modal">
 
-                <button type="submit" class="button button-modal button-modal--reverse">Войти</button>
+                <button type="submit" class="button button-modal button-modal--reverse">Sign in</button>
 
-                <button type="button" class="button-restore button button-modal">Восстановить пароль</button>
+                <button type="button" class="button-restore button button-modal">Recover the password</button>
 
-                <p class="reg-modal__error accent">Неверные данные</p>
+                <p class="reg-modal__error accent">Wrong data</p>
 
             </form>
         </div>
 
         <div class="reg-modal__container-second">
-            <h2 class="reg-modal__title">Восстановить пароль</h2>
+            <h2 class="reg-modal__title">Recover the password</h2>
 
             <!-- TODO: расскомментировать при настройке формы -->
             <!-- <form class="reg-modal__form"> -->
 
-            <label for="res-pass" class="reg-modal__label label-modal">Пароль</label>
+            <label for="res-pass" class="reg-modal__label label-modal">Password</label>
             <input type="password" name="res-pass" id="res-pass" class="reg-modal__input input-modal reg-modal__ttu">
 
-            <label for="res-repass" class="reg-modal__label label-modal">Повторите пароль</label>
+            <label for="res-repass" class="reg-modal__label label-modal">Repeat your password</label>
             <input type="password" name="res-repass" id="res-repass" class="reg-modal__input input-modal">
 
-            <button type="submit"
-                class="button button-restore__rdy button-modal button-modal--reverse">Восстановить</button>
+            <button type="submit" class="button button-restore__rdy button-modal button-modal--reverse">Recover</button>
 
             <!-- </form> -->
         </div>
@@ -420,12 +418,12 @@
             </div>
 
             <p class="reg-modal__complete-para">
-                Письмо ссылкой восстановления пароля было отправлено на адрес <span
+                An email with a password recovery link was sent to <span
                     class="reg-modal__complete-mail reg__complete-pass">vjmikhailov15@mail.ru</span>.
             </p>
 
             <p class="reg-modal__complete-para">
-                Если письмо не удается найти, проверьте папку <span class="reg-modal__complete-spam">СПАМ</span>.
+                if the message cannot be found, check your <span class="reg-modal__complete-spam">spam</span>folder.
             </p>
         </div>
     </div>
@@ -448,18 +446,16 @@
                 </svg>
             </div>
 
-            <p class="reg-modal__complete-para">
-                Пароль успешно изменен.
-            </p>
+            <p class="reg-modal__complete-para">Password changed successfully.</p>
 
 
         </div>
     </div>
 
 
-    <script src="js/app.min.js"></script>
-    <script src="libs/fancybox/jquery.fancybox.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="../js/app.min.js"></script>
+    <script src="../libs/fancybox/jquery.fancybox.min.js"></script>
+    <script src="../js/app.js"></script>
 
 </body>
 

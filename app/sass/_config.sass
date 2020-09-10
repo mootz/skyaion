@@ -4,7 +4,8 @@ $accent: #0090ff // Accent Color
 $fontsize: 14px // Body Font Size
 $textcolor: #ffffff // Text Color
 $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
-$opensans: 'OpenSans', -apple-system, BlinkMacSystemFont, Arial, sans-serif // Montserrat Font Family
+$opensans: 'Open Sans', -apple-system, BlinkMacSystemFont, Arial, sans-serif // Montserrat Font Family
+$roboto: 'Roboto', -apple-system, BlinkMacSystemFont, Arial, sans-serif // Montserrat Font Family
 
 $color-brand: #3023ae
 $color-brand-secondary: #c86dd7
@@ -30,8 +31,15 @@ $color-brand-secondary: #c86dd7
         font-display: swap
         src: local($fname), url($furl) format('woff2')
 
-@include font('OpenSans', normal, 400, '../fonts/OpenSans/OpenSans-Regular.woff2')
-// @include font('OpenSans', normal, 700, '../fonts/OpenSans/OpenSans-Bold.woff2')
+@include font('Roboto', normal, 100, '../fonts/Roboto/Roboto-Thin.woff2')
+@include font('Roboto', normal, 300, '../fonts/Roboto/Roboto-Light.woff2')
+@include font('Roboto', normal, 400, '../fonts/Roboto/Roboto-Regular.woff2')
+@include font('Roboto', normal, 500, '../fonts/Roboto/Roboto-Medium.woff2')
+@include font('Roboto', normal, 700, '../fonts/Roboto/Roboto-Bold.woff2')
+@include font('OpenSans', normal, 300, '../fonts/OpenSans/opensans-light.woff2')
+@include font('OpenSans', normal, 400, '../fonts/OpenSans/opensans-regular.woff2')
+@include font('OpenSans', normal, 500, '../fonts/OpenSans/opensans-semibold.woff2')
+@include font('OpenSans', normal, 700, '../fonts/OpenSans/opensans-bold.woff2')
 
 // GENERAL DOCUMENT STYLES
 
@@ -59,6 +67,7 @@ body
     position: relative
     line-height: 24px
     overflow-x: hidden
+    letter-spacing: 1px
     color: $textcolor
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
     margin: 0

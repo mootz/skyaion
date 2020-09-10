@@ -1,9 +1,65 @@
 @font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local("Roboto"), url("../fonts/Roboto/Roboto-Thin.woff2") format("woff2"); }
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Roboto"), url("../fonts/Roboto/Roboto-Light.woff2") format("woff2"); }
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto"), url("../fonts/Roboto/Roboto-Regular.woff2") format("woff2"); }
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Roboto"), url("../fonts/Roboto/Roboto-Medium.woff2") format("woff2"); }
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto"), url("../fonts/Roboto/Roboto-Bold.woff2") format("woff2"); }
+
+@font-face {
+  font-family: "OpenSans";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("OpenSans"), url("../fonts/OpenSans/opensans-light.woff2") format("woff2"); }
+
+@font-face {
   font-family: "OpenSans";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("OpenSans"), url("../fonts/OpenSans/OpenSans-Regular.woff2") format("woff2"); }
+  src: local("OpenSans"), url("../fonts/OpenSans/opensans-regular.woff2") format("woff2"); }
+
+@font-face {
+  font-family: "OpenSans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("OpenSans"), url("../fonts/OpenSans/opensans-semibold.woff2") format("woff2"); }
+
+@font-face {
+  font-family: "OpenSans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("OpenSans"), url("../fonts/OpenSans/opensans-bold.woff2") format("woff2"); }
 
 ::-webkit-input-placeholder {
   color: #666; }
@@ -40,12 +96,13 @@ input, textarea {
           box-sizing: border-box; }
 
 body {
-  font-family: "OpenSans", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   font-size: 14px;
   min-width: 300px;
   position: relative;
   line-height: 24px;
   overflow-x: hidden;
+  letter-spacing: 1px;
   color: #ffffff;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   margin: 0; }
@@ -79,14 +136,13 @@ body {
   position: relative; }
   .preview-site::before {
     content: '';
-    background-image: url("../images/body-logo-center.png");
+    background-image: url("../images/logo.png");
     position: absolute;
     width: 100%;
     height: 100%;
-    background-position: center 300px;
+    background-position: center 150px;
     z-index: -1;
-    background-repeat: no-repeat;
-    background-blend-mode: color; }
+    background-repeat: no-repeat; }
 
 .container {
   max-width: 1170px;
@@ -210,14 +266,17 @@ body {
       margin-right: 0; }
 
 main {
-  height: 800px; }
+  height: 900px; }
 
 .footer {
   margin-right: auto;
   background: -webkit-gradient(linear, left bottom, left top, color-stop(40%, black), to(rgba(0, 212, 255, 0)));
   background: -o-linear-gradient(bottom, black 40%, rgba(0, 212, 255, 0) 100%);
   background: linear-gradient(0deg, black 40%, rgba(0, 212, 255, 0) 100%);
-  padding-top: 200px; }
+  padding-top: 200px;
+  width: 100%;
+  position: absolute;
+  bottom: 0; }
 
 .t-footer {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -250,10 +309,6 @@ main {
     color: #727373;
     font-size: 12px; }
 
-@media screen and (min-width: 1920px) {
-  body {
-    background-size: auto; } }
-
 @media screen and (max-width: 1920px) {
   body {
     background-size: cover; }
@@ -277,29 +332,6 @@ main {
   .t-footer__link {
     margin-right: 16px; } }
 
-.reg-modal {
-  border: 1px solid #0090ff;
-  padding: 60px 50px 40px;
-  background-color: #000000;
-  max-width: 500px;
-  display: none; }
-  .reg-modal__title {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 40px;
-    text-align: center;
-    text-transform: uppercase; }
-  .reg-modal__form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column; }
-  .reg-modal__ttu {
-    text-transform: uppercase; }
-
 .label-modal {
   text-transform: uppercase;
   margin-left: 10px;
@@ -314,7 +346,6 @@ main {
   color: #ffffff; }
 
 .button-modal {
-  background-color: #0090ff;
   padding: 20px 10px;
   width: 100%;
   text-transform: uppercase;
@@ -323,6 +354,144 @@ main {
   -o-transition: 0.2s;
   transition: 0.2s;
   cursor: pointer;
+  background-color: transparent;
   color: #ffffff; }
+  .button-modal:focus, .button-modal:active {
+    outline: 0; }
   .button-modal:hover {
-    background-color: transparent; }
+    background-color: transparent;
+    color: #0090ff; }
+  .button-modal--reverse {
+    background-color: #0090ff; }
+    .button-modal--reverse:hover {
+      background-color: transparent;
+      color: #ffffff; }
+
+.fancybox-bg {
+  background: #000000 !important; }
+
+.accent {
+  color: #0090ff; }
+
+.reg-modal {
+  border: 1px solid #0090ff;
+  display: none; }
+  .reg-modal.registration-modal .reg-modal__error {
+    margin-top: 12px; }
+  .reg-modal.complete-modal.fancybox-content {
+    height: 550px; }
+  .reg-modal.complete-modal .reg-modal__container-second {
+    display: block;
+    opacity: 1; }
+  .reg-modal.succ-pass.fancybox-content {
+    height: 570px; }
+    .reg-modal.succ-pass.fancybox-content .reg-modal__icon-wrap {
+      margin-top: 60px; }
+  .reg-modal.fancybox-content {
+    padding: 60px 50px 50px;
+    max-width: 500px;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.65); }
+  .reg-modal__container-first {
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
+  .reg-modal__container-second {
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    padding-bottom: 70px; }
+  .reg-modal__title {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+    text-transform: uppercase; }
+  .reg-modal__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .reg-modal__ttu {
+    text-transform: uppercase; }
+  .reg-modal__icon-wrap {
+    max-width: 112px;
+    margin: 40px auto 60px auto; }
+    .reg-modal__icon-wrap svg {
+      width: 100%; }
+  .reg-modal__complete-para {
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 28px;
+    font-weight: 300;
+    margin-right: auto;
+    margin-left: auto;
+    color: #0090ff;
+    max-width: 352px;
+    text-align: center; }
+    .reg-modal__complete-para:last-child {
+      margin-bottom: 0; }
+  .reg-modal__container-second {
+    opacity: 0;
+    display: none; }
+  .reg-modal__complete-mail, .reg-modal__complete-spam {
+    color: #ffffff; }
+  .reg-modal__error {
+    text-align: center;
+    margin-top: 10px;
+    width: 100%; }
+
+.d-modal {
+  text-transform: uppercase;
+  border: 1px solid #0090ff;
+  font-weight: 400;
+  display: none; }
+  .d-modal.fancybox-content {
+    padding: 60px 50px 50px;
+    max-width: 500px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    overflow: hidden; }
+  .d-modal__title {
+    margin-bottom: 50px;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center; }
+  .d-modal__desc {
+    margin-bottom: 50px;
+    text-align: center; }
+  .d-modal__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%; }
+  .d-modal__item {
+    width: 100%;
+    margin-bottom: 20px; }
+    .d-modal__item:last-child {
+      margin-bottom: 0; }
+  .d-modal__link {
+    text-align: center;
+    display: block;
+    width: 100%; }
+
+.auth-modal .reg-modal__container-second,
+.auth-modal .reg-modal__container-third {
+  display: none; }
+
+.auth-modal .button-restore {
+  margin-top: 20px; }
+
+.auth-modal.fancybox-content {
+  height: 550px; }

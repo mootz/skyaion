@@ -44,7 +44,7 @@ function browsersync() {
 function scriptsLibs() {
     return src([
         'node_modules/jquery/dist/jquery.min.js',
-        'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
+        // 'app/libs/fancybox/jquery.fancybox.min.js',
     ])
         .pipe(concat('libs.min.js')) // Конкатенируем в один файл
         .pipe(uglify()) // Сжимаем JavaScript
@@ -66,7 +66,7 @@ function scripts() {
 function stylesLibs() {
     return src([
         'node_modules/normalize.css/normalize.css',
-        'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
+        // 'app/libs/fancybox/jquery.fancybox.min.css',
     ])
         .pipe(concat('libs.min.css')) // Конкатенируем в файл app.min.js
         .pipe(
