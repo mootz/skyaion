@@ -129,10 +129,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #000;
-  background-position: center 0; }
+  background-position: center 0;
+  height: 100vh;
+  overflow: hidden; }
 
 .preview-site {
-  min-height: 100vh;
   position: relative; }
   .preview-site::before {
     content: '';
@@ -140,7 +141,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-position: center 150px;
+    background-position: center 42%;
     z-index: -1;
     background-repeat: no-repeat; }
 
@@ -180,7 +181,10 @@ body {
   .t-header__logo-wrap {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    max-width: 196px; }
+  .t-header__logo-img {
+    width: 100%; }
   .t-header__info-server {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -270,17 +274,17 @@ main {
 
 .footer {
   margin-right: auto;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(40%, black), to(rgba(0, 212, 255, 0)));
-  background: -o-linear-gradient(bottom, black 40%, rgba(0, 212, 255, 0) 100%);
-  background: linear-gradient(0deg, black 40%, rgba(0, 212, 255, 0) 100%);
-  padding-top: 200px;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(23%, black), to(rgba(0, 212, 255, 0)));
+  background: -o-linear-gradient(bottom, black 23%, rgba(0, 212, 255, 0) 100%);
+  background: linear-gradient(0deg, black 23%, rgba(0, 212, 255, 0) 100%);
+  padding-top: 100px;
   width: 100%;
   position: absolute;
   bottom: 0; }
 
 .t-footer {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 16px 0;
+  padding: 2px 0;
   font-weight: bold;
   text-transform: uppercase; }
   .t-footer .container {
@@ -303,24 +307,24 @@ main {
       margin-right: 0; }
 
 .b-footer {
-  padding: 20px 0; }
+  padding: 8px 0; }
   .b-footer__text {
     text-align: center;
     color: #727373;
-    font-size: 12px; }
+    font-size: 10px;
+    line-height: 12px; }
 
 @media screen and (max-width: 1920px) {
   body {
     background-size: cover; }
   .preview-site::before {
-    background-size: 700px; } }
+    background-size: 700px;
+    background-position: center 42%; } }
 
 @media screen and (max-width: 1600px) {
   .preview-site::before {
     background-size: 600px;
-    background-position: center 250px; }
-  main {
-    height: 530px; } }
+    background-position: center 42%; } }
 
 @media screen and (max-width: 1200px) {
   body {
@@ -353,6 +357,7 @@ main {
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
+  letter-spacing: 1px;
   cursor: pointer;
   background-color: transparent;
   color: #ffffff; }
