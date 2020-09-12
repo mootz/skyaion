@@ -73,4 +73,19 @@ $(document).ready(function () {
             }, 300)
         })
     }
+
+    $('select').niceSelect()
+
+    if (document.querySelector('.shop-modal__number')) {
+        let less = document.querySelector('.shop-modal__less')
+        let more = document.querySelector('.shop-modal__more')
+        let inp = document.querySelector('.shop-modal__number')
+
+        less.addEventListener('click', function () {
+            inp.value = Number(inp.value) - 1
+        })
+        more.addEventListener('click', function () {
+            inp.value = Number(inp.value) + 1
+        })
+    }
 })

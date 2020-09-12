@@ -44,6 +44,7 @@ function browsersync() {
 function scriptsLibs() {
     return src([
         'node_modules/jquery/dist/jquery.min.js',
+        'app/libs/niceselect/jquery.nice-select.min.js',
         // 'app/libs/fancybox/jquery.fancybox.min.js',
     ])
         .pipe(concat('libs.min.js')) // Конкатенируем в один файл
@@ -66,6 +67,7 @@ function scripts() {
 function stylesLibs() {
     return src([
         'node_modules/normalize.css/normalize.css',
+        'app/libs/niceselect/nice-select.css',
         // 'app/libs/fancybox/jquery.fancybox.min.css',
     ])
         .pipe(concat('libs.min.css')) // Конкатенируем в файл app.min.js
