@@ -6,15 +6,25 @@ body
     background-size: cover
     background-color: #000
     background-position: center 0
-    height: 100vh
+    min-height: 100vh
     overflow: hidden
+    padding-bottom: 150px
+
+    &::-webkit-scrollbar
+        width: 5px
+
+    &::-webkit-scrollbar-track
+        background-color: transparent
+
+    &::-webkit-scrollbar-thumb
+        background-color: $accent
 
     &.w-content
         height: auto
         overflow: auto
 
         .footer
-            position: relative
+            position: absolute
 
         main
             height: auto
@@ -31,7 +41,7 @@ input[type=number]
     height: 100vh !important
 
 .preview-site
-    // min-height: 100vh
+    height: 100vh
     position: relative
 
     &::before
@@ -44,16 +54,24 @@ input[type=number]
         z-index: -1
         background-repeat: no-repeat
 
+    .footer
+        position: absolute
+        padding-top: 0
+
+    main
+        height: auto
+
 .container
-    max-width: 1170px
+    // max-width: 1170px
+    padding: 0 20em
     width: 100%
     margin: 0 auto
 
-    @media screen and ( max-width: 1200px )
-        max-width: 960px
+    // @media screen and ( max-width: 1200px )
+    //     max-width: 960px
 
-    @media screen and ( max-width: 992px )
-        max-width: 720px
+    // @media screen and ( max-width: 992px )
+    //     max-width: 720px
 
 .hover-accent
     transition: all 0.2s
@@ -567,15 +585,21 @@ main
     border-left: 0
 
 .content-pl
-    padding-left: 340px
+    padding-left: 20em
 .content-pr
-    padding-right: 340px
+    padding-right: 20em
 
 .r-content
     width: 37%
 
-.profile
+.l-content__container
     background-color: rgba(0, 0, 0, 0.5)
+    height: 100%
+    display: flex
+    flex-direction: column
+
+.profile
+    justify-content: space-between
     // padding-left: 28%
 
     &__head
@@ -638,13 +662,18 @@ main
         display: flex
         align-items: center
         justify-content: flex-end
+        border-right: 0
 
         &.active
             color: $accent
             border: 1px solid $accent
+            border-right: 0
 
         &:hover
             color: $accent
+
+        &:last-child
+            margin-bottom: 0
 
     &__value-add
         background: transparent
@@ -654,6 +683,7 @@ main
         color: #ffffff
         max-width: 126px
         font-weight: 100
+        padding: 0 10px
 
     &__multi-items
         display: flex
@@ -663,12 +693,177 @@ main
         .p-menu__link
             margin-bottom: 0
 
+        .p-menu__link
+            width: 100%
+
     &__column-items
         margin-right: 10px
         flex: 1
 
         .p-menu__link
             justify-content: center
+            width: 126px
+            text-align: center
+            display: block
+            padding-right: 12px
+            border-right: 1px dashed $accent
 
             &:first-child
                 margin-bottom: 16px
+
+.slider
+    display: block
+    padding: 6px 0px 6px 6px
+    border: 1px solid $accent
+    margin-bottom: 16px
+    border-right: 0
+
+    &__container
+        min-height: 330px
+        max-height: 340px
+
+    &__slide
+        background-size: cover
+
+    &__info-wrap
+        height: 100%
+
+    &__info
+        padding: 0 18px
+        background-color: rgba(0, 0, 0, 0.5)
+        position: relative
+        height: 100%
+        max-width: 300px
+
+        &::after
+            background-color: rgba(0, 0, 0, 0.5)
+            position: absolute
+            content: ''
+            height: 100%
+            width: 2px
+            right: -6px
+            top: 0
+
+    &__info-title
+        padding: 10px 20px
+        border-bottom: 1px dashed $accent
+        text-align: center
+        font-family: $opensans
+        font-weight: bold
+
+    &__info-desc
+        font-family: $nexa
+        text-transform: initial
+        font-size: 20px
+        line-height: 30px
+        text-align: center
+        max-width: 190px
+        margin: 26px auto
+
+    &__link
+        padding: 10px 20px
+        border: 1px dashed $accent
+        font-weight: 100
+        transition: all 0.2s
+        margin: 0 auto 10px
+        display: block
+        width: fit-content
+        font-size: 14px
+        line-height: 15px
+
+        &:hover
+            color: $accent
+
+    .swiper-container-vertical>.swiper-pagination-bullets
+        right: auto
+        left: 10px
+
+        .swiper-pagination-bullet-active
+            background-color: $accent
+
+        .swiper-pagination-bullet
+            border: 1px solid $accent
+
+@media screen and ( min-width: 2600px )
+    .container
+        padding: 0 40em
+
+    .content-pr
+        padding-right: 40em
+
+    .content-pl
+        padding-left: 40em
+
+@media screen and ( max-width: 2600px )
+    .container
+        padding: 0 40em
+
+    .content-pr
+        padding-right: 40em
+
+    .content-pl
+        padding-left: 40em
+
+@media screen and ( max-width: 2400px )
+    .container
+        padding: 0 28em
+
+    .content-pr
+        padding-right: 28em
+
+    .content-pl
+        padding-left: 28em
+
+@media screen and ( max-width: 1920px )
+    .container
+        padding: 0 20em
+
+    .content-pr
+        padding-right: 20em
+
+    .content-pl
+        padding-left: 20em
+
+@media screen and ( max-width: 1600px )
+    .container
+        padding: 0 14em
+
+    .content-pr
+        padding-right: 14em
+
+    .content-pl
+        padding-left: 14em
+
+@media screen and ( max-width: 1400px )
+    .container
+        padding: 0 8em
+
+    .content-pr
+        padding-right: 8em
+
+    .content-pl
+        padding-left: 8em
+
+@media screen and ( max-width: 1200px )
+    .container
+        padding: 0 4em
+
+    .content-pr
+        padding-right: 4em
+
+    .content-pl
+        padding-left: 4em
+
+.chars
+    &__banner-wrap
+        height: 126px
+        width: 100%
+        display: flex
+        margin-top: 16px
+
+    &__banner
+        width: 100%
+        object-fit: cover
+        margin-bottom: 24px
+
+    &__

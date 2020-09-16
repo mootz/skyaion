@@ -187,7 +187,7 @@
     <main>
         <div class="content">
             <div class="l-content">
-                <div class="profile content-pl">
+                <div class="profile l-content__container content-pl">
                     <p class="profile__head">Добро пожаловать <span class="profile__nick accent">DARK</span></p>
 
                     <p class="profile__desc">Отсюда вы сможете управлять своей учетной записЬЮ. Не забывайте хранить
@@ -227,13 +227,80 @@
                         не безопасно!
                     </p>
                 </div>
+
+                <div style="display: none;" class="chars l-content__container">
+                    <p class="profile__head content-pl"><span class="profile__nick accent">DARK</span> Ваш список
+                        персонажей
+                    </p>
+
+                    <div class="chars__banner-wrap">
+                        <img src="images/dest/chars__banner.jpg" alt="Баннер" class="chars__banner">
+                    </div>
+
+                    <div class="chars__table-wrap">
+                        <div class="chars__row chars__first-row content-pl">
+                            <div class="chars__column-name accent">
+                                Имя
+                            </div>
+                            <div class="chars__column-race accent">
+                                Раса
+                            </div>
+                            <div class="chars__column-class accent">
+                                Класс
+                            </div>
+                            <div class="chars__column-lvl accent">
+                                Уровень
+                            </div>
+                            <div class="chars__column-status accent">
+                                Статус
+                            </div>
+                        </div>
+
+                        <div class="chars__row content-pl">
+                            <div class="chars__column-name accent">
+                                Joiz
+                            </div>
+                            <div class="chars__column-race accent">
+                                <div class="chars__race-ico"></div>
+                            </div>
+                            <div class="chars__column-class accent">
+                                <div class="chars__class-ico"></div>
+                            </div>
+                            <div class="chars__column-lvl accent">
+                                55
+                            </div>
+                            <div class="chars__column-status chars__status--off accent">
+                                Оффлайн
+                            </div>
+                        </div>
+
+                        <div class="chars__row">
+                            <div class="chars__column-name accent">
+                                Dark
+                            </div>
+                            <div class="chars__column-race accent">
+                                <div class="chars__race-ico"></div>
+                            </div>
+                            <div class="chars__column-class accent">
+                                <div class="chars__class-ico"></div>
+                            </div>
+                            <div class="chars__column-lvl accent">
+                                8
+                            </div>
+                            <div class="chars__column-status chars__status--on accent">
+                                Онлайн
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
             <div class="r-content">
                 <div class="p-menu">
                     <a href="#" class="content-pr p-menu__link active">Информация</a>
                     <a href="#" class="content-pr p-menu__link">Персонажи</a>
-                    <p class="content-pr p-menu__desc">BOUS OF SKY</p>
-                    <div class="content-pr p-menu__multi-items">
+                    <p class="content-pr p-menu__desc">BONUS OF SKY</p>
+                    <div class="p-menu__multi-items">
                         <input value="100" type="number" class="input p-menu__value-add" name="value-add-coins">
                         <a href="#" class="content-pr p-menu__link">Пополнить</a>
                     </div>
@@ -248,6 +315,67 @@
                         </div>
                         <a href="#" class="content-pr p-menu__link">Получить</a>
                     </div>
+
+                    <div class="slider">
+                        <div class="slider__container swiper-container">
+
+                            <div class="swiper-wrapper">
+
+                                <div style="background-image: url('images/slider/aion-prada.jpg');"
+                                    class="swiper-slide slider__slide">
+                                    <div class="slider__info-wrap">
+                                        <div class="slider__info">
+                                            <h3 class="slider__info-title">ОБТ</h3>
+
+                                            <p class="slider__info-desc">
+                                                Присоединяйся к открытому бета-тестированию. SkyAion нуждается в помощи
+                                                каждого эксперта игры.
+                                            </p>
+
+                                            <a href="#" class="slider__link">Читать полностью</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div style="background-image: url('images/dest/body-bg.jpg');"
+                                    class="swiper-slide slider__slide">
+                                    <div class="slider__info-wrap">
+                                        <div class="slider__info">
+                                            <h3 class="slider__info-title">ОБТ</h3>
+
+                                            <p class="slider__info-desc">
+                                                Присоединяйся к открытому бета-тестированию. SkyAion нуждается в помощи
+                                                каждого эксперта игры.
+                                            </p>
+
+                                            <a href="#" class="slider__link">Читать полностью</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="background-image: url('images/slider/aion-prada.jpg');"
+                                    class="swiper-slide slider__slide">
+                                    <div class="slider__info-wrap">
+                                        <div class="slider__info">
+                                            <h3 class="slider__info-title">ОБТ</h3>
+
+                                            <p class="slider__info-desc">
+                                                Присоединяйся к открытому бета-тестированию. SkyAion нуждается в помощи
+                                                каждого эксперта игры.
+                                            </p>
+
+                                            <a href="#" class="slider__link">Читать полностью</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-pagination slider__pagination"></div>
+
+                        </div>
+                    </div>
+
                     <a href="#" class="content-pr p-menu__link">Смена аккаунта</a>
                     <a href="#" class="content-pr p-menu__link">Выйти везде</a>
                 </div>

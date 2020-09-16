@@ -44,6 +44,7 @@ function browsersync() {
 function scriptsLibs() {
     return src([
         'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/swiper/swiper-bundle.min.js',
         'app/libs/niceselect/jquery.nice-select.min.js',
         // 'app/libs/fancybox/jquery.fancybox.min.js',
     ])
@@ -67,6 +68,7 @@ function scripts() {
 function stylesLibs() {
     return src([
         'node_modules/normalize.css/normalize.css',
+        'node_modules/swiper/swiper-bundle.min.css',
         'app/libs/niceselect/nice-select.css',
         // 'app/libs/fancybox/jquery.fancybox.min.css',
     ])

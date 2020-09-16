@@ -147,4 +147,16 @@ $(document).ready(function () {
             btnF.innerHTML = inpF.value
         })
     }
+
+    if (document.querySelector('.slider__container')) {
+        var mySwiper = new Swiper('.slider__container', {
+            direction: 'vertical',
+            loop: true,
+            slidesPerView: 1,
+            pagination: {
+                el: '.slider__pagination',
+                type: 'bullets',
+            },
+        })
+    }
 })
