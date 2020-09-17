@@ -159,4 +159,40 @@ $(document).ready(function () {
             },
         })
     }
+
+    // переключение меню в личном кабинете
+    function menuClick(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName('l-content__item')
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = 'none'
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName('r-menu__item')
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(' active', '')
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = 'block'
+        evt.currentTarget.className += ' active'
+    }
+
+    if (document.querySelector('.l-content')) {
+        let charsLink = document.querySelector('.char-link')
+        let profileLink = document.querySelector('.profile-link')
+
+        charsLink.addEventListener('click', function () {
+            menuClick(event, 'chars')
+        })
+
+        profileLink.addEventListener('click', function () {
+            menuClick(event, 'profile')
+        })
+        // profileLink.click()
+    }
 })
