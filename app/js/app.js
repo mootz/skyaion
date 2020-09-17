@@ -185,6 +185,7 @@ $(document).ready(function () {
     if (document.querySelector('.l-content')) {
         let charsLink = document.querySelector('.char-link')
         let profileLink = document.querySelector('.profile-link')
+        let giftsLink = document.querySelector('.gifts-link')
 
         charsLink.addEventListener('click', function () {
             menuClick(event, 'chars')
@@ -193,6 +194,10 @@ $(document).ready(function () {
         profileLink.addEventListener('click', function () {
             menuClick(event, 'profile')
         })
-        // profileLink.click()
+
+        giftsLink.addEventListener('click', function () {
+            menuClick(event, 'gifts')
+        })
+        profileLink.click()
     }
 })
