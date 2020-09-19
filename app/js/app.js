@@ -162,26 +162,23 @@ $(document).ready(function () {
 
     // переключение меню в личном кабинете
     function menuClick(evt, cityName) {
-        // Declare all variables
         var i, tabcontent, tablinks
 
-        // Get all elements with class="tabcontent" and hide them
         tabcontent = document.getElementsByClassName('l-content__item')
         for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = 'none'
         }
 
-        // Get all elements with class="tablinks" and remove the class "active"
         tablinks = document.getElementsByClassName('r-menu__item')
         for (i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(' active', '')
         }
 
-        // Show the current tab, and add an "active" class to the button that opened the tab
         document.getElementById(cityName).style.display = 'block'
         evt.currentTarget.className += ' active'
     }
 
+    // переключение в личном кабинете, в меню
     if (document.querySelector('.l-content')) {
         let charsLink = document.querySelector('.char-link')
         let profileLink = document.querySelector('.profile-link')
@@ -199,5 +196,90 @@ $(document).ready(function () {
             menuClick(event, 'gifts')
         })
         profileLink.click()
+    }
+
+    // переключение в рейтинге между игроками и легионами
+    if (document.querySelector('.rating__table')) {
+        let ratingTable = document.querySelector('.rating__table')
+        let legionTable = document.querySelector('.legion__table')
+        let ratingBtn = document.querySelector('.players-item')
+        let legionBtn = document.querySelector('.legions-item')
+
+        ratingBtn.addEventListener('click', function () {
+            if (!this.classList.contains('active')) {
+                ratingBtn.classList.toggle('active')
+                legionBtn.classList.toggle('active')
+            }
+            legionTable.style.display = 'none'
+            ratingTable.style.display = 'block'
+        })
+
+        legionBtn.addEventListener('click', function () {
+            if (!this.classList.contains('active')) {
+                legionBtn.classList.toggle('active')
+                ratingBtn.classList.toggle('active')
+            }
+            legionTable.style.display = 'block'
+            ratingTable.style.display = 'none'
+        })
+    }
+
+    if (document.querySelector('.content')) {
+        let lkButton = document.querySelector('.lk-button')
+        let ratingBtn = document.querySelector('.rating-button')
+        let rContent = document.querySelector('.r-content')
+        let lContent = document.querySelector('.l-content')
+        let lBg = document.querySelector('.l-content__bg')
+        let contentWrapAll = document.querySelector('.content')
+        let rating = document.querySelector('.rating')
+        let ratingWrap = document.querySelector('.rating__wrap')
+        let ratingTop = document.querySelector('.rating__top')
+        let ratingTable = document.querySelector('.rating__table')
+
+        ratingBtn.addEventListener('click', function () {
+            rContent.style.width = 0
+            rContent.style.transform = 'translateX(200px)'
+            lContent.style.width = '100%'
+            lBg.style.paddingLeft = '100%'
+            // contentWrapAll.style.width = 'calc(100% + 7px)'
+            ratingWrap.style.paddingRight = '0'
+            ratingTop.style.opacity = '1'
+            ratingTable.style.opacity = '1'
+
+            setTimeout(() => {
+                rating.style.display = 'block'
+                rating.style.transform = 'translateX(0)'
+                lContent.style.display = 'none'
+                // contentWrapAll.style.width = '100%'
+            }, 300)
+        })
+
+        lkButton.addEventListener('click', function () {
+            rContent.style.width = '37%'
+            rContent.style.transform = 'translateX(0)'
+            lContent.style.width = '67%'
+            lBg.style.paddingLeft = '0'
+            // contentWrapAll.style.width = 'calc(100% + 20px)'
+            ratingWrap.style.paddingRight = '100%'
+            ratingTop.style.opacity = '0'
+            ratingTable.style.opacity = '0'
+
+            setTimeout(() => {
+                lContent.style.display = 'block'
+                rating.style.display = 'none'
+                rating.style.transform = 'translateX(0)'
+            }, 300)
+        })
+    }
+
+    if (document.querySelector('select')) {
+        let firstItem = document.querySelectorAll(
+            '.nice-select .list .selected'
+        )
+        setTimeout(() => {
+            firstItem.forEach((e) => {
+                e.style.display = 'none'
+            })
+        }, 1000)
     }
 })

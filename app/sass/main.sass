@@ -9,6 +9,7 @@ body
     min-height: 100vh
     overflow: hidden
     padding-bottom: 150px
+    overflow-x: hidden
 
     &::-webkit-scrollbar
         width: 5px
@@ -22,12 +23,14 @@ body
     &.w-content
         height: auto
         overflow: auto
+        background-size: inherit
 
         .footer
             position: absolute
 
         main
             height: auto
+            overflow-x: hidden
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button
@@ -39,6 +42,19 @@ input[type=number]
 
 .fancybox-active
     height: 100vh !important
+
+.select__max-height .list
+    max-height: 100px
+    overflow-y: auto
+
+    &::-webkit-scrollbar
+        width: 5px
+
+    &::-webkit-scrollbar-track
+        background-color: transparent
+
+    &::-webkit-scrollbar-thumb
+        background-color: $accent
 
 .preview-site
     height: 100vh
@@ -61,6 +77,9 @@ input[type=number]
     main
         height: auto
 
+.hidden
+    display: none
+
 .container
     padding: 0 20em
     width: 100%
@@ -77,7 +96,7 @@ input[type=number]
         max-width: 720px
 
 .hover-accent
-    transition: all 0.2s
+    transition: all 0.4s
 
     &:hover
         color: $accent
@@ -157,12 +176,12 @@ input[type=number]
         height: 31px
         display: block
         padding: 0 6px
-        transition: all 0.2s
+        transition: all 0.4s
 
         svg
             height: 100%
             width: 100%
-            transition: all 0.2s
+            transition: all 0.4s
 
         &:hover
             border: 2px solid $accent
@@ -281,7 +300,7 @@ main
     width: 100%
     text-transform: uppercase
     border: 1px solid $accent
-    transition: 0.2s
+    transition: 0.4s
     letter-spacing: 1px
     cursor: pointer
     background-color: transparent
@@ -333,7 +352,7 @@ main
             margin-top: 60px
 
     &.fancybox-content
-        padding: 60px 50px 50px
+        padding: 60px 50px 0
         max-width: 500px
         width: 100%
         height: 700px
@@ -524,7 +543,7 @@ main
         border-radius: 0
         border: 1px solid $accent
         margin-bottom: 20px
-        transition: all 0.2s
+        transition: all 0.4s
         height: 58px
         display: flex
         align-items: center
@@ -549,12 +568,12 @@ main
             margin-top: 1px
             left: -1px
             width: calc(100% + 2px)
-            transition: all 0.2s
+            transition: all 0.4s
 
         .option
             color: #ffffff
             border: 1px solid $accent
-            transition: all 0.2s
+            transition: all 0.4s
             height: 58px
             align-items: center
             display: flex
@@ -581,12 +600,16 @@ main
     text-transform: uppercase
     font-family: $roboto
     margin-top: 30px
+    transition: all 0.5s
+    overflow: hidden
 
 .l-content
     width: 63%
     padding: 6px 6px 6px 0
     border: 1px solid $accent
     border-left: 0
+    transition: all 0.5s
+    position: relative
 
     &__item
         animation: fadeEffect 1s
@@ -598,12 +621,17 @@ main
 
 .r-content
     width: 37%
+    transition: all 0.5s
+    position: relative
 
 .l-content__container
-    background-color: rgba(0, 0, 0, 0.5)
     height: 100%
     display: flex
     flex-direction: column
+
+.l-content__bg
+    background-color: rgba(0, 0, 0, 0.5)
+    transition: all 0.5s
 
 .profile
     justify-content: space-between
@@ -672,7 +700,7 @@ main
         padding-left: 12px
         cursor: pointer
         border: 1px dashed $accent
-        transition: all 0.2s
+        transition: all 0.4s
         display: flex
         align-items: center
         justify-content: flex-end
@@ -779,7 +807,7 @@ main
         padding: 10px 20px
         border: 1px dashed $accent
         font-weight: 100
-        transition: all 0.2s
+        transition: all 0.4s
         margin: 0 auto 10px
         display: block
         width: fit-content
@@ -1081,6 +1109,9 @@ main
         width: 34px
         height: 34px
 
+        &:last-child
+            margin-right: 0
+
     &__gift-item-img
         width: 100%
         height: 100%
@@ -1089,13 +1120,13 @@ main
         background: #000000
         border-radius: 0
         border: 1px solid #ffffff
-        transition: all 0.2s
+        transition: all 0.4s
         display: flex
         height: 100%
         align-items: center
         color: #ffffff
         justify-content: center
-        width: 224px
+        min-width: 224px
 
         &.open
             border: 1px solid $accent
@@ -1115,12 +1146,12 @@ main
             margin-top: 1px
             left: -1px
             width: calc(100% + 2px)
-            transition: all 0.2s
+            transition: all 0.4s
 
         .option
             color: #ffffff
             border: 1px solid $accent
-            transition: all 0.2s
+            transition: all 0.4s
             height: 38px
             align-items: center
             display: flex
@@ -1135,3 +1166,100 @@ main
 
             &:hover
                 color: $accent
+
+.rating
+    border-top: 1px solid $accent
+    padding: 6px 0
+    line-height: normal
+    width: 100%
+    transition: all 1s
+    transform: translateX(-100%)
+    display: none
+
+    &__wrap
+        background-color: rgba(0, 0, 0, 0.5)
+        text-transform: uppercase
+        transition: all 0.5s
+
+    &__top
+        display: flex
+        justify-content: space-between
+        padding: 14px 0
+        transition: all 0.5s
+        border-bottom: 1px solid $accent
+
+    &__table
+        transition: all 0.5s
+        animation: fadeEffect 1s
+
+    &__link-item
+        font-family: $opensans
+        font-weight: bold
+        cursor: pointer
+        transition: all 0.4s
+
+        &.active
+            color: $accent
+
+    &__row
+        display: flex
+        justify-content: space-between
+        background-color: rgba(0, 0, 0, 0.5)
+        margin-bottom: 10px
+        font-family: $roboto
+        font-weight: 500
+        text-align: center
+        height: 50px
+        margin-bottom: 10px
+        align-items: center
+
+    &__first-row
+        background-color: transparent
+        padding: 38px 0
+
+    &__column-number
+        width: 8%
+        text-align: left
+
+    &__column-name
+        width: 16%
+
+    &__column-race
+        width: 12%
+
+    &__column-class
+        width: 16%
+
+    &__column-ap
+        width: 14%
+
+    &__column-kills
+        width: 10%
+
+    &__column-lvl
+        width: 24%
+        text-align: right
+
+.rating-class
+    &--glad,
+    &--guard
+        color: #1ebfef
+
+    &--ranger,
+    &--assa
+        color: #8cffae
+
+    &--spirit,
+    &--sorc
+        color: #e48fff
+
+    &--clerik,
+    &--chanter
+        color: #e5e1b9
+
+.rating-race
+    &--elyos
+        color: #1ebfef
+
+    &--asmo
+        color: #ee7d53
