@@ -1310,6 +1310,9 @@ main {
     .gifts__chars .option:hover {
       color: #0090ff; }
 
+.gifts__gift--active {
+  border-color: #0090ff; }
+
 .rating {
   border-top: 1px solid #0090ff;
   padding: 6px 0;
