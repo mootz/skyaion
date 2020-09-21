@@ -152,11 +152,25 @@ $(document).ready(function () {
         var mySwiper = new Swiper('.slider__container', {
             direction: 'vertical',
             loop: true,
+            disableOnInteraction: true,
+            autoplay: {
+                delay: 10000,
+            },
             slidesPerView: 1,
             pagination: {
                 el: '.slider__pagination',
                 type: 'bullets',
+                clickable: true,
             },
+        })
+        $('.swiper-container').mouseenter(function () {
+            mySwiper.autoplay.stop()
+            // console.log('slider stopped')
+        })
+
+        $('.swiper-container').mouseleave(function () {
+            mySwiper.autoplay.start()
+            // console.log('slider started again')
         })
     }
 
@@ -202,12 +216,12 @@ $(document).ready(function () {
     if (document.querySelector('.rating__table')) {
         let ratingTable = document.querySelector('.rating__table')
         let legionTable = document.querySelector('.legion__table')
-        let ratingBtn = document.querySelector('.players-item')
+        let ratingMenuBtn = document.querySelector('.players-item')
         let legionBtn = document.querySelector('.legions-item')
 
-        ratingBtn.addEventListener('click', function () {
+        ratingMenuBtn.addEventListener('click', function () {
             if (!this.classList.contains('active')) {
-                ratingBtn.classList.toggle('active')
+                ratingMenuBtn.classList.toggle('active')
                 legionBtn.classList.toggle('active')
             }
             legionTable.style.display = 'none'
@@ -217,14 +231,12 @@ $(document).ready(function () {
         legionBtn.addEventListener('click', function () {
             if (!this.classList.contains('active')) {
                 legionBtn.classList.toggle('active')
-                ratingBtn.classList.toggle('active')
+                ratingMenuBtn.classList.toggle('active')
             }
             legionTable.style.display = 'block'
             ratingTable.style.display = 'none'
         })
-    }
 
-    if (document.querySelector('.content')) {
         let lkButton = document.querySelector('.lk-button')
         let ratingBtn = document.querySelector('.rating-button')
         let rContent = document.querySelector('.r-content')
@@ -234,7 +246,8 @@ $(document).ready(function () {
         let rating = document.querySelector('.rating')
         let ratingWrap = document.querySelector('.rating__wrap')
         let ratingTop = document.querySelector('.rating__top')
-        let ratingTable = document.querySelector('.rating__table')
+        let profileLink = document.querySelector('.profile-link')
+        // let ratingTable = document.querySelector('.rating__table')
 
         ratingBtn.addEventListener('click', function () {
             rContent.style.width = 0
@@ -245,13 +258,15 @@ $(document).ready(function () {
             ratingWrap.style.paddingRight = '0'
             ratingTop.style.opacity = '1'
             ratingTable.style.opacity = '1'
+            ratingMenuBtn.click()
 
             setTimeout(() => {
                 rating.style.display = 'block'
                 rating.style.transform = 'translateX(0)'
                 lContent.style.display = 'none'
+                rContent.style.display = 'none'
                 // contentWrapAll.style.width = '100%'
-            }, 300)
+            }, 150)
         })
 
         lkButton.addEventListener('click', function () {
@@ -263,12 +278,14 @@ $(document).ready(function () {
             ratingWrap.style.paddingRight = '100%'
             ratingTop.style.opacity = '0'
             ratingTable.style.opacity = '0'
+            profileLink.click()
 
             setTimeout(() => {
                 lContent.style.display = 'block'
+                rContent.style.display = 'block'
                 rating.style.display = 'none'
                 rating.style.transform = 'translateX(0)'
-            }, 300)
+            }, 150)
         })
     }
 

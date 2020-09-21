@@ -23,10 +23,12 @@ body
     &.w-content
         height: auto
         overflow: auto
-        background-size: inherit
+        // padding-bottom: 0
+        // background-size: inherit
 
         .footer
             position: absolute
+            // position: relative
 
         main
             height: auto
@@ -42,6 +44,17 @@ input[type=number]
 
 .fancybox-active
     height: 100vh !important
+
+.fancybox-content,
+.fancybox-slide
+    &::-webkit-scrollbar
+        width: 5px !important
+
+    &::-webkit-scrollbar-track
+        background-color: transparent !important
+
+    &::-webkit-scrollbar-thumb
+        background-color: $accent !important
 
 .select__max-height .list
     max-height: 100px
@@ -197,6 +210,7 @@ input[type=number]
         font-weight: bold
         text-transform: uppercase
         height: fit-content
+        line-height: 31px
 
         &:last-child
             margin-right: 0
@@ -364,7 +378,7 @@ main
 
     &__container-second
         transition: all 0.3s
-        padding-bottom: 70px
+        padding-bottom: 4px
 
     &__title
         font-size: 36px
@@ -472,7 +486,8 @@ main
     font-family: $roboto
 
     &.fancybox-content
-        height: 85%
+        max-height: 716px
+        height: 100%
 
     .reg-modal__error
         margin-top: 6px
@@ -480,6 +495,9 @@ main
 
     .button-modal
         font-family: $roboto
+
+    .list
+        transform: scale(0) translateY(-21px)
 
     &__number::-webkit-outer-spin-button,
     &__number::-webkit-inner-spin-button
@@ -599,7 +617,7 @@ main
     display: flex
     text-transform: uppercase
     font-family: $roboto
-    margin-top: 30px
+    margin-top: 21px
     transition: all 0.5s
     overflow: hidden
 
@@ -632,6 +650,7 @@ main
 .l-content__bg
     background-color: rgba(0, 0, 0, 0.5)
     transition: all 0.5s
+    height: 100%
 
 .profile
     justify-content: space-between
@@ -647,11 +666,11 @@ main
         line-height: 28px
         max-width: 500px
         margin-top: 12px
-        margin-bottom: 86px
+        margin-bottom: 46px
 
     &__info-wrap
         display: flex
-        margin-bottom: 100px
+        margin-bottom: 78px
 
     &__info-name
         margin-right: 110px
@@ -682,13 +701,14 @@ main
 
 .p-menu
     margin-left: 60px
-    font-weight: 100
+    font-weight: 300
 
     &__link,
     &__desc
         display: block
         text-align: right
         margin-bottom: 16px
+        line-height: 14px
 
     &__desc
         font-weight: bold
@@ -725,7 +745,7 @@ main
         text-align: center
         color: #ffffff
         max-width: 126px
-        font-weight: 100
+        font-weight: 300
         padding: 0 10px
 
     &__multi-items
@@ -777,6 +797,9 @@ main
         position: relative
         height: 100%
         max-width: 300px
+        justify-content: space-between
+        flex-direction: column
+        display: flex
 
         &::after
             background-color: rgba(0, 0, 0, 0.5)
@@ -800,7 +823,7 @@ main
         font-size: 20px
         line-height: 30px
         text-align: center
-        max-width: 260px
+        max-width: 262px
         margin: 26px auto
 
     &__link
@@ -808,14 +831,13 @@ main
         border: 1px dashed $accent
         font-weight: 100
         transition: all 0.4s
-        margin: 0 auto 10px
+        margin: 0 auto 20px
         display: block
         width: fit-content
         font-size: 14px
         line-height: 15px
 
         &:hover
-            color: $accent
             border: 1px solid $accent
 
     .swiper-container-vertical>.swiper-pagination-bullets
@@ -1066,10 +1088,16 @@ main
     .chars__banner-wrap
         background-color: #ffffff
 
+    .list
+        bottom: 100%
+        top: auto
+        transform: scale(.75) translateY(70px)
+
     &__desc
         text-transform: none
         line-height: 28px
         margin-bottom: 32px
+        text-transform: uppercase
 
     &__row
         display: flex
@@ -1079,6 +1107,8 @@ main
         align-items: center
         background-color: rgba(0, 0, 0, 0.65)
         margin-bottom: 20px
+
+        &--accept
 
     &__gift-status,
     &__gift-value
@@ -1175,6 +1205,7 @@ main
     transition: all 1s
     transform: translateX(-100%)
     display: none
+    border-bottom: 1px solid #0090ff
 
     &__wrap
         background-color: rgba(0, 0, 0, 0.5)
@@ -1191,6 +1222,59 @@ main
     &__table
         transition: all 0.5s
         animation: fadeEffect 1s
+        overflow-y: scroll
+        height: 56vh
+
+        &::-webkit-scrollbar
+            width: 5px
+
+        &::-webkit-scrollbar-track
+            background-color: transparent
+
+        &::-webkit-scrollbar-thumb
+            background-color: $accent
+
+        @media screen and ( max-width: 4000px )
+            height: 80vh
+
+        @media screen and ( max-width: 3800px )
+            height: 78vh
+
+        @media screen and ( max-width: 3600px )
+            height: 76vh
+
+        @media screen and ( max-width: 3400px )
+            height: 74vh
+
+        @media screen and ( max-width: 3200px )
+            height: 72vh
+
+        @media screen and ( max-width: 3000px )
+            height: 70vh
+
+        @media screen and ( max-width: 2800px )
+            height: 68vh
+
+        @media screen and ( max-width: 2600px )
+            height: 66vh
+
+        @media screen and ( max-width: 2400px )
+            height: 64vh
+
+        @media screen and ( max-width: 2200px )
+            height: 61vh
+
+        @media screen and ( max-width: 1920px )
+            height: 56vh
+
+        @media screen and ( max-width: 1800px )
+            height: 52vh
+
+        @media screen and ( max-width: 1600px )
+            height: 46vh
+
+        @media screen and ( max-width: 1400px )
+            height: 40vh
 
     &__link-item
         font-family: $opensans
@@ -1216,6 +1300,9 @@ main
     &__first-row
         background-color: transparent
         padding: 38px 0
+        height: auto
+        line-height: 14px
+        margin-bottom: 0
 
     &__column-number
         width: 8%
@@ -1263,3 +1350,16 @@ main
 
     &--asmo
         color: #ee7d53
+
+.change-pass,
+.change-email
+    &__send-code
+        margin-bottom: 20px
+
+    .reg-modal__error
+        margin-top: 10px
+        margin-bottom: 10px
+        line-height: 14px
+
+    .reg-modal__ttu
+        text-transform: uppercase

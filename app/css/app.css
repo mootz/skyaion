@@ -149,8 +149,7 @@ body {
     background-color: #0090ff; }
   body.w-content {
     height: auto;
-    overflow: auto;
-    background-size: inherit; }
+    overflow: auto; }
     body.w-content .footer {
       position: absolute; }
     body.w-content main {
@@ -167,6 +166,18 @@ input[type=number] {
 
 .fancybox-active {
   height: 100vh !important; }
+
+.fancybox-content::-webkit-scrollbar,
+.fancybox-slide::-webkit-scrollbar {
+  width: 5px !important; }
+
+.fancybox-content::-webkit-scrollbar-track,
+.fancybox-slide::-webkit-scrollbar-track {
+  background-color: transparent !important; }
+
+.fancybox-content::-webkit-scrollbar-thumb,
+.fancybox-slide::-webkit-scrollbar-thumb {
+  background-color: #0090ff !important; }
 
 .select__max-height .list {
   max-height: 100px;
@@ -323,7 +334,8 @@ input[type=number] {
     text-transform: uppercase;
     height: -webkit-fit-content;
     height: -moz-fit-content;
-    height: fit-content; }
+    height: fit-content;
+    line-height: 31px; }
     .b-header__link:last-child {
       margin-right: 0; }
 
@@ -467,7 +479,7 @@ main {
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
-    padding-bottom: 70px; }
+    padding-bottom: 4px; }
   .reg-modal__title {
     font-size: 36px;
     line-height: 44px;
@@ -565,12 +577,17 @@ main {
   text-transform: uppercase;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, Arial, sans-serif; }
   .shop-modal.fancybox-content {
-    height: 85%; }
+    max-height: 716px;
+    height: 100%; }
   .shop-modal .reg-modal__error {
     margin-top: 6px;
     text-transform: initial; }
   .shop-modal .button-modal {
     font-family: "Roboto", -apple-system, BlinkMacSystemFont, Arial, sans-serif; }
+  .shop-modal .list {
+    -webkit-transform: scale(0) translateY(-21px);
+        -ms-transform: scale(0) translateY(-21px);
+            transform: scale(0) translateY(-21px); }
   .shop-modal__number::-webkit-outer-spin-button, .shop-modal__number::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0; }
@@ -699,7 +716,7 @@ main {
   display: flex;
   text-transform: uppercase;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-  margin-top: 30px;
+  margin-top: 21px;
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
@@ -745,7 +762,8 @@ main {
   background-color: rgba(0, 0, 0, 0.5);
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
-  transition: all 0.5s; }
+  transition: all 0.5s;
+  height: 100%; }
 
 .profile {
   -webkit-box-pack: justify;
@@ -760,12 +778,12 @@ main {
     line-height: 28px;
     max-width: 500px;
     margin-top: 12px;
-    margin-bottom: 86px; }
+    margin-bottom: 46px; }
   .profile__info-wrap {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-bottom: 100px; }
+    margin-bottom: 78px; }
   .profile__info-name {
     margin-right: 110px; }
   .profile__name-item {
@@ -797,11 +815,12 @@ main {
 
 .p-menu {
   margin-left: 60px;
-  font-weight: 100; }
+  font-weight: 300; }
   .p-menu__link, .p-menu__desc {
     display: block;
     text-align: right;
-    margin-bottom: 16px; }
+    margin-bottom: 16px;
+    line-height: 14px; }
   .p-menu__desc {
     font-weight: bold;
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Arial, sans-serif; }
@@ -840,7 +859,7 @@ main {
     text-align: center;
     color: #ffffff;
     max-width: 126px;
-    font-weight: 100;
+    font-weight: 300;
     padding: 0 10px; }
   .p-menu__multi-items {
     display: -webkit-box;
@@ -887,7 +906,17 @@ main {
     background-color: rgba(0, 0, 0, 0.5);
     position: relative;
     height: 100%;
-    max-width: 300px; }
+    max-width: 300px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
     .slider__info::after {
       background-color: rgba(0, 0, 0, 0.5);
       position: absolute;
@@ -908,7 +937,7 @@ main {
     font-size: 20px;
     line-height: 30px;
     text-align: center;
-    max-width: 260px;
+    max-width: 262px;
     margin: 26px auto; }
   .slider__link {
     padding: 10px 20px;
@@ -917,7 +946,7 @@ main {
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     transition: all 0.4s;
-    margin: 0 auto 10px;
+    margin: 0 auto 20px;
     display: block;
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -925,7 +954,6 @@ main {
     font-size: 14px;
     line-height: 15px; }
     .slider__link:hover {
-      color: #0090ff;
       border: 1px solid #0090ff; }
   .slider .swiper-container-vertical > .swiper-pagination-bullets {
     right: auto;
@@ -1154,10 +1182,18 @@ main {
 .gifts .chars__banner-wrap {
   background-color: #ffffff; }
 
+.gifts .list {
+  bottom: 100%;
+  top: auto;
+  -webkit-transform: scale(0.75) translateY(70px);
+      -ms-transform: scale(0.75) translateY(70px);
+          transform: scale(0.75) translateY(70px); }
+
 .gifts__desc {
   text-transform: none;
   line-height: 28px;
-  margin-bottom: 32px; }
+  margin-bottom: 32px;
+  text-transform: uppercase; }
 
 .gifts__row {
   display: -webkit-box;
@@ -1285,7 +1321,8 @@ main {
   -webkit-transform: translateX(-100%);
       -ms-transform: translateX(-100%);
           transform: translateX(-100%);
-  display: none; }
+  display: none;
+  border-bottom: 1px solid #0090ff; }
   .rating__wrap {
     background-color: rgba(0, 0, 0, 0.5);
     text-transform: uppercase;
@@ -1309,7 +1346,57 @@ main {
     -o-transition: all 0.5s;
     transition: all 0.5s;
     -webkit-animation: fadeEffect 1s;
-            animation: fadeEffect 1s; }
+            animation: fadeEffect 1s;
+    overflow-y: scroll;
+    height: 56vh; }
+    .rating__table::-webkit-scrollbar {
+      width: 5px; }
+    .rating__table::-webkit-scrollbar-track {
+      background-color: transparent; }
+    .rating__table::-webkit-scrollbar-thumb {
+      background-color: #0090ff; }
+    @media screen and (max-width: 4000px) {
+      .rating__table {
+        height: 80vh; } }
+    @media screen and (max-width: 3800px) {
+      .rating__table {
+        height: 78vh; } }
+    @media screen and (max-width: 3600px) {
+      .rating__table {
+        height: 76vh; } }
+    @media screen and (max-width: 3400px) {
+      .rating__table {
+        height: 74vh; } }
+    @media screen and (max-width: 3200px) {
+      .rating__table {
+        height: 72vh; } }
+    @media screen and (max-width: 3000px) {
+      .rating__table {
+        height: 70vh; } }
+    @media screen and (max-width: 2800px) {
+      .rating__table {
+        height: 68vh; } }
+    @media screen and (max-width: 2600px) {
+      .rating__table {
+        height: 66vh; } }
+    @media screen and (max-width: 2400px) {
+      .rating__table {
+        height: 64vh; } }
+    @media screen and (max-width: 2200px) {
+      .rating__table {
+        height: 61vh; } }
+    @media screen and (max-width: 1920px) {
+      .rating__table {
+        height: 56vh; } }
+    @media screen and (max-width: 1800px) {
+      .rating__table {
+        height: 52vh; } }
+    @media screen and (max-width: 1600px) {
+      .rating__table {
+        height: 46vh; } }
+    @media screen and (max-width: 1400px) {
+      .rating__table {
+        height: 40vh; } }
   .rating__link-item {
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
     font-weight: bold;
@@ -1338,7 +1425,10 @@ main {
             align-items: center; }
   .rating__first-row {
     background-color: transparent;
-    padding: 38px 0; }
+    padding: 38px 0;
+    height: auto;
+    line-height: 14px;
+    margin-bottom: 0; }
   .rating__column-number {
     width: 8%;
     text-align: left; }
@@ -1373,3 +1463,17 @@ main {
 
 .rating-race--asmo {
   color: #ee7d53; }
+
+.change-pass__send-code,
+.change-email__send-code {
+  margin-bottom: 20px; }
+
+.change-pass .reg-modal__error,
+.change-email .reg-modal__error {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 14px; }
+
+.change-pass .reg-modal__ttu,
+.change-email .reg-modal__ttu {
+  text-transform: uppercase; }
