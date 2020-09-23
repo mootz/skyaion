@@ -322,7 +322,7 @@ input[type=number] {
     .b-header__socials-item:last-child {
       margin-right: 0; }
   .b-header__socials-link {
-    border: 2px solid #ffffff;
+    border: 1px solid #ffffff;
     width: 31px;
     height: 31px;
     display: block;
