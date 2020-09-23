@@ -272,7 +272,7 @@ $(document).ready(function () {
         lkButton.addEventListener('click', function () {
             rContent.style.width = '37%'
             rContent.style.transform = 'translateX(0)'
-            lContent.style.width = '67%'
+            lContent.style.width = '63%'
             lBg.style.paddingLeft = '0'
             // contentWrapAll.style.width = 'calc(100% + 20px)'
             ratingWrap.style.paddingRight = '100%'
@@ -299,4 +299,13 @@ $(document).ready(function () {
             })
         }, 1000)
     }
+
+    // always at end
+    setTimeout(() => {
+        document.querySelector('.css-loader__wrap').style.opacity = '0'
+    }, 1700)
+    setTimeout(() => {
+        document.querySelector('.css-loader__wrap').style.display = 'none'
+        document.querySelector('body').classList.remove('loader')
+    }, 1900)
 })

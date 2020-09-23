@@ -34,6 +34,13 @@
   src: local("Roboto"), url("../fonts/Roboto/Roboto-Bold.woff2") format("woff2"); }
 
 @font-face {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Helvetica"), url("../fonts/helvetica.woff2") format("woff2"); }
+
+@font-face {
   font-family: "OpenSans";
   font-style: normal;
   font-weight: 300;
@@ -132,7 +139,7 @@ ul {
   margin: 0; }
 
 body {
-  background-image: url("../images/src/body-bg.jpg");
+  background-image: url("../images/dest/body-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #000;
@@ -155,6 +162,8 @@ body {
     body.w-content main {
       height: auto;
       overflow-x: hidden; }
+  body.loader {
+    overflow: hidden; }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -251,9 +260,16 @@ input[type=number] {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    max-width: 196px; }
-  .t-header__logo-img {
-    width: 100%; }
+    max-width: 196px;
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #0090ff;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 24px;
+    font-family: "Helvetica", -apple-system, BlinkMacSystemFont, Arial, sans-serif; }
   .t-header__info-server {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -455,7 +471,8 @@ main {
   border: 1px solid #0090ff;
   display: none; }
   .reg-modal.registration-modal .reg-modal__error {
-    margin-top: 12px; }
+    margin-top: 5px;
+    margin-bottom: 6px; }
   .reg-modal.complete-modal.fancybox-content {
     height: 550px; }
   .reg-modal.complete-modal .reg-modal__container-second {
@@ -469,7 +486,6 @@ main {
     padding: 60px 50px 0;
     max-width: 500px;
     width: 100%;
-    height: 700px;
     background-color: rgba(0, 0, 0, 0.65); }
   .reg-modal__container-first {
     -webkit-transition: all 0.3s;
@@ -577,10 +593,11 @@ main {
   text-transform: uppercase;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, Arial, sans-serif; }
   .shop-modal.fancybox-content {
-    max-height: 716px;
+    max-height: 722px;
     height: 100%; }
   .shop-modal .reg-modal__error {
-    margin-top: 6px;
+    margin-top: 7px;
+    margin-bottom: 5px;
     text-transform: initial; }
   .shop-modal .button-modal {
     font-family: "Roboto", -apple-system, BlinkMacSystemFont, Arial, sans-serif; }
@@ -697,12 +714,21 @@ main {
       display: flex;
       -webkit-box-pack: center;
           -ms-flex-pack: center;
-              justify-content: center; }
+              justify-content: center;
+      border-top: 0; }
       .shop-modal__char-select .option.selected, .shop-modal__char-select .option.focus, .shop-modal__char-select .option.selected.focus, .shop-modal__char-select .option:hover {
         background: #000000;
         font-weight: 400; }
       .shop-modal__char-select .option:hover {
         color: #0090ff; }
+  .shop-modal .reg-modal__container-second .shop-modal__quantity {
+    margin-bottom: 35px; }
+  .shop-modal .reg-modal__container-second .shop-modal__name-friend {
+    margin-bottom: 55px; }
+  .shop-modal .reg-modal__container-second .shop-modal__paragraph:first-child {
+    margin-bottom: 54px; }
+  .shop-modal .reg-modal__container-second .shop-modal__para-mb {
+    margin-bottom: 40px; }
 
 .reg-modal.succ-refill {
   height: 570px; }
@@ -942,7 +968,7 @@ main {
   .slider__link {
     padding: 10px 20px;
     border: 1px dashed #0090ff;
-    font-weight: 100;
+    font-weight: 300;
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     transition: all 0.4s;
@@ -952,7 +978,7 @@ main {
     width: -moz-fit-content;
     width: fit-content;
     font-size: 14px;
-    line-height: 15px; }
+    line-height: 14px; }
     .slider__link:hover {
       border: 1px solid #0090ff; }
   .slider .swiper-container-vertical > .swiper-pagination-bullets {
@@ -1109,23 +1135,23 @@ main {
   text-transform: uppercase; }
 
 .chars__column-name {
-  width: 27%;
+  width: 20%;
   text-align: left; }
 
 .chars__column-race {
-  width: 18%;
+  width: 20%;
   text-align: center; }
 
 .chars__column-class {
-  width: 18%;
+  width: 20%;
   text-align: center; }
 
 .chars__column-lvl {
-  width: 25%;
+  width: 20%;
   text-align: center; }
 
 .chars__column-status {
-  width: 12%;
+  width: 20%;
   text-align: right; }
 
 .chars__status--on {
@@ -1179,6 +1205,9 @@ main {
 .class-war {
   background-image: url("../images/classes/Warrior.png"); }
 
+.fancybox-is-open .fancybox-bg {
+  opacity: 0.97 !important; }
+
 .gifts .chars__banner-wrap {
   background-color: #ffffff; }
 
@@ -1188,6 +1217,10 @@ main {
   -webkit-transform: scale(0.75) translateY(70px);
       -ms-transform: scale(0.75) translateY(70px);
           transform: scale(0.75) translateY(70px); }
+  .gifts .list .option {
+    border-bottom: 0; }
+    .gifts .list .option:last-child {
+      border-bottom: 1px solid #0090ff; }
 
 .gifts__desc {
   text-transform: none;
@@ -1225,6 +1258,9 @@ main {
 
 .gifts__gift-status {
   border-left: 0; }
+  .gifts__gift-status--accepted {
+    color: #0090ff;
+    pointer-events: none; }
 
 .gifts__gift-value {
   max-width: 100px;
